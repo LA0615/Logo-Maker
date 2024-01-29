@@ -10,18 +10,18 @@ const questions = [
   },
   {
     type: 'input',
-    name: 'text color',
+    name: 'textColor',
     message: 'Please enter a text color',
   },
   {
     type: 'list',
-    name: 'shape list',
+    name: 'shapeType',
     message: 'Please choose a shape from the list.',
     choices :['circle', 'triangle', 'square'],
   },
   {
     type: 'input',
-    name: 'shape color',
+    name: 'shapeColor',
     message: 'Please enter a color for your shape.',
   },
 ];

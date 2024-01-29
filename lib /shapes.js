@@ -4,6 +4,7 @@ class Shape {
         this.shapeColor = shapeColor;
         this.text = text;
         this.textColor = textColor;
+        this.shapeType = shapeType;
     }
     render(){
         return `<p>${this.shapeColor}</p>`;
