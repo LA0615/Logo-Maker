@@ -1,5 +1,6 @@
 const inquirer = require('inquirer');
-const Shape = require('./lib/shapes.js');
+const { Circle, Square, Triangle } = require('./lib/shapes');
+
 
 //Shape questions with text and color options
 const questions = [
@@ -17,7 +18,7 @@ const questions = [
     type: 'list',
     name: 'shapeType',
     message: 'Please choose a shape from the list.',
-    choices :['circle', 'triangle', 'square'],
+    choices :['Circle', 'Triangle', 'Square'],
   },
   {
     type: 'input',
@@ -26,3 +27,17 @@ const questions = [
   },
 ];
 
+function init() {
+    //Prompt the user with questions and collect responses
+    inquirer
+      .prompt(questions)
+      .then((data)  => {
+        const myShape = new Shape(data.shapeColor, data.text, data.shapeType, data.textColor);
+        console.log(myShape.render());
+      })
+      .catch((error) => {
+        console.log('Error occured:', error);
+    });
+ }
+ //Call the function to initialize the app
+init();
